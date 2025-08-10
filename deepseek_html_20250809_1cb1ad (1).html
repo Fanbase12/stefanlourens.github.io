@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stefan Lourens Ministry</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Custom CSS for elements that need more styling than Tailwind provides */
+        .book-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .nav-link::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: white;
+            transition: width .3s;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        #menu-toggle:checked + #menu {
+            display: block;
+        }
+        .payment-icon {
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+        .payment-icon:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900 font-sans">
+    <!-- Navigation -->
+    <nav class="bg-black text-white shadow-lg">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="text-2xl font-bold">Stefan Lourens Ministry</div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button class="outline-none mobile-menu-button">
+                        <svg class="w-6 h-6 text-white" x-show="!showMenu" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                            <path d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link py-2">Home</a>
+                    <a href="#books" class="nav-link py-2">Books</a>
+                    <a href="#mentorship" class="nav-link py-2">Mentorship</a>
+                    <a href="#about" class="nav-link py-2">About</a>
+                    <a href="#contact" class="nav-link py-2">Contact</a>
+                </div>
+            </div>
+            <!-- Mobile Menu -->
+            <div class="hidden mobile-menu md:hidden pb-4" id="menu">
+                <a href="#home" class="block py-2 px-4 text-sm hover:bg-gray-800">Home</a>
+                <a href="#books" class="block py-2 px-4 text-sm hover:bg-gray-800">Books</a>
+                <a href="#mentorship" class="block py-2 px-4 text-sm hover:bg-gray-800">Mentorship</a>
+                <a href="#about" class="block py-2 px-4 text-sm hover:bg-gray-800">About</a>
+                <a href="#contact" class="block py-2 px-4 text-sm hover:bg-gray-800">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="bg-gray-100 py-20">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">Spiritual Growth Through Biblical Teaching</h1>
+                <p class="text-xl mb-8">Discover transformative books and personalized mentorship to deepen your faith journey.</p>
+                <div class="flex space-x-4">
+                    <a href="#books" class="bg-black text-white px-6 py-3 rounded hover:bg-gray-800 transition">Explore Books</a>
+                    <a href="#mentorship" class="border-2 border-black text-black px-6 py-3 rounded hover:bg-gray-200 transition">Mentorship</a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <div class="w-full max-w-md">
+                    <img src="https://i.postimg.cc/dtg3ZCBs/Whats-App-Image-2025-08-09-at-22-15-59-a83a5779.jpg" alt="Stefan Lourens" class="rounded-lg shadow-xl w-full h-auto object-contain">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Books Section -->
+    <section id="books" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-4">Featured Books</h2>
+            <p class="text-xl text-center mb-12 max-w-2xl mx-auto">Explore my collection of spiritually enriching books designed to guide you in your faith journey.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Book 1 -->
+                <div class="book-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <img src="https://i.postimg.cc/YS0tXq8n/Chat-GPT-Image-Aug-9-2025-07-18-17-PM.png" alt="Book Cover" class="w-full h-64 object-contain p-4">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">The Anointing Oil</h3>
+                        <p class="text-gray-700 mb-4">A sacred guide exploring the power and purpose of anointing oil in spiritual healing, blessing, and breakthrough</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold">$19.99</span>
+                            <button class="bg-black text-white px-4 py-2 rounded hover:bg-gray-800 transition">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Book 2 -->
+                <div class="book-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <img src="https://i.postimg.cc/dV8s7x36/Chat-GPT-Image-Aug-9-2025-07-18-22-PM.png" alt="Book Cover" class="w-full h-64 object-contain p-4">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 hovered-element">Visions Of The Throne</h3>
+                        <p class="text-gray-700 mb-4">A powerful spiritual journey revealing divine truths and heavenly revelations to inspire your faith and purpose.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold">$16.99</span>
+                            <button class="bg-black text-white px-4 py-2 rounded hover:bg-gray-800 transition">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Book 3 -->
+                <div class="book-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <img src="https://i.postimg.cc/L8yPW5kG/Chat-GPT-Image-Aug-9-2025-07-18-25-PM.png" alt="Book Cover" class="w-full h-64 object-contain p-4">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Prophetic Keys To Greatness</h3>
+                        <p class="text-gray-700 mb-4">Prophetic Keys to Greatness unlocks powerful spiritual insights to help you step into your God-given destiny and achieve true success.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold">$14.99</span>
+                            <button class="bg-black text-white px-4 py-2 rounded hover:bg-gray-800 transition">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Book 4 -->
+                <div class="book-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <img src="https://i.postimg.cc/MTRbgBYd/image.jpg" alt="Book Cover" class="w-full h-64 object-contain p-4">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Seeing In The Spirit</h3>
+                        <p class="text-gray-700 mb-4">This Book Will help open your spirtual eyes you will learn how to see clearly in the realm of the spirit.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold">$17.99</span>
+                            <button class="bg-black text-white px-4 py-2 rounded hover:bg-gray-800 transition">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mentorship Section -->
+    <section id="mentorship" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-4">Mentorship Programs</h2>
+            <p class="text-xl text-center mb-12 max-w-2xl mx-auto">Personalized spiritual guidance to help you grow in your faith and overcome life's challenges.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                <!-- 1-on-1 Prayer & Prophecy Session -->
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-black text-white p-3 rounded-full mr-4">
+                            <i class="fas fa-pray text-xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold">Personal Prayer & Prophecy Session</h3>
+                    </div>
+                    <p class="mb-6">Receive personalized spiritual insight through prayer, prophecy, and biblical guidance tailored to your specific needs.</p>
+                    <ul class="mb-6 space-y-2">
+                        <li class="flex items-center"><i class="fas fa-check text-black mr-2"></i> Personal prophecy revelation</li>
+                        <li class="flex items-center"><i class="fas fa-check text-black mr-2"></i> Prayer guidance & spiritual direction</li>
+                        <li class="flex items-center"><i class="fas fa-check text-black mr-2"></i> Biblical counseling</li>
+                        <li class="flex items-center"><i class="fas fa-check text-black mr-2"></i> Life purpose & destiny insights</li>
+                    </ul>
+                    <div class="flex justify-between items-center">
+                        <span class="font-bold">$150/session</span>
+                        <button class="bg-black text-white px-4 py-2 rounded hover:bg-gray-800 transition" onclick="openBookingModal()">Book Session</button>
+                    </div>
+                </div>
+                
+                <!-- Group Mentorship -->
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-black text-white p-3 rounded-full mr-4">
+                            <i class="fas fa-users text-xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold">Group Mentorship</h3>
+                    </div>
+                    <p class="mb-6">Join a small group of like-minded individuals for collective learning, discussion, and spiritual growth.</p>
+                    <ul class="mb-6 space-y-2">
+                        <li class="flex items-center"><i class="fas fa-check text-black mr-2"></i> Bi-weekly group sessions</li>
+                        <li class="flex items-center"><i class="fas fa-check text-black mr-2"></i> Interactive Bible study</li>
+                        <li class="flex items-center"><i class="fas fa-check text-black mr-2"></i> Accountability partners</li>
+                        <li class="flex items-center"><i class="fas fa-check text-black mr-2"></i> Q&A discussions</li>
+                    </ul>
+                    <div class="flex justify-between items-center">
+                        <span class="font-bold">$75/month</span>
+                        <button class="bg-black text-white px-4 py-2 rounded hover:bg-gray-800 transition" onclick="openBookingModal()">Join Group</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white p-8 rounded-lg shadow-md max-w-3xl mx-auto">
+                <h3 class="text-2xl font-bold text-center mb-6">Have Questions About Mentorship?</h3>
+                <form class="space-y-4">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label for="name" class="block mb-1">Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-black">
+                        </div>
+                        <div>
+                            <label for="email" class="block mb-1">Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-black">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="program" class="block mb-1">Interested In</label>
+                        <select id="program" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-black">
+                            <option value="">Select a program</option>
+                            <option value="1-on-1">1-on-1 Mentorship</option>
+                            <option value="group">Group Mentorship</option>
+                            <option value="both">Both</option>
+                            <option value="questions">Just have questions</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="message" class="block mb-1">Message</label>
+                        <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-black"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-black text-white px-6 py-3 rounded hover:bg-gray-800 transition">Send Inquiry</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-full md:pl-12">
+                    <h2 class="text-3xl font-bold mb-6">About Stefan Lourens</h2>
+                    <p class="mb-4">With over 6 years of ministry experience, I am passionate about helping individuals grow in their relationship with God and discover their spiritual purpose.</p>
+                    <p class="mb-4">My journey began when I experienced a powerful life changing encounter with God. Since then, I've dedicated my life to studying Scripture, teaching biblical principles, and mentoring others in their faith journeys.</p>
+                    <p class="mb-6">Through my books, teachings, and mentorship programs, I aim to provide practical, biblically-based guidance that transforms lives and strengthens faith communities.</p>
+                    <div class="flex space-x-4">
+                        <a href="#books" class="bg-black text-white px-6 py-2 rounded hover:bg-gray-800 transition">My Books</a>
+                        <a href="#mentorship" class="border-2 border-black text-black px-6 py-2 rounded hover:bg-gray-100 transition">Mentorship</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-4">Get In Touch</h2>
+            <p class="text-xl text-center mb-12 max-w-2xl mx-auto">Have questions or want to connect? Reach out through the form below.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-bold mb-6">Send a Message</h3>
+                    <form 
+                        action="https://formspree.io/f/xgvzrkob" 
+                        method="POST"
+                        id="contactForm"
+                        class="space-y-4"
+                    >
+                        <div>
+                            <label for="contact-name" class="block mb-1">Name*</label>
+                            <input 
+                                type="text" 
+                                id="contact-name" 
+                                name="name" 
+                                required
+                                class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-black"
+                            >
+                        </div>
+                        <div>
+                            <label for="contact-email" class="block mb-1">Email*</label>
+                            <input 
+                                type="email" 
+                                id="contact-email" 
+                                name="email" 
+                                required
+                                class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-black"
+                            >
+                        </div>
+                        <div>
+                            <label for="subject" class="block mb-1">Subject</label>
+                            <input 
+                                type="text" 
+                                id="subject" 
+                                name="subject"
+                                class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-black"
+                            >
+                        </div>
+                        <div>
+                            <label for="contact-message" class="block mb-1">Message*</label>
+                            <textarea 
+                                id="contact-message" 
+                                name="message" 
+                                rows="4" 
+                                required
+                                class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-black"
+                            ></textarea>
+                        </div>
+                        <button 
+                            type="submit" 
+                            id="submitBtn"
+                            class="w-full bg-black text-white px-6 py-3 rounded hover:bg-gray-800 transition"
+                        >
+                            Send Message
+                        </button>
+                    </form>
+                    <div id="successMessage" class="hidden mt-4 p-4 bg-green-100 text-green-700 rounded-lg text-center">
+                        ✓ Thank you! Your message has been sent successfully.
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="bg-white p-8 rounded-lg shadow-md mb-8">
+                        <h3 class="text-2xl font-bold mb-6">Sow a Seed</h3>
+                        <p class="mb-6">"Do not be deceived: God cannot be mocked. A man reaps what he sows." - Galatians 6:7</p>
+                        <p class="mb-6">Your generous donations help continue this important work of spreading God's word through books, teachings, and mentorship programs.</p>
+                        <div class="flex flex-wrap gap-4 mb-6">
+                            <button class="bg-black text-white px-6 py-2 rounded hover:bg-gray-800 transition">Sow a Seed</button>
+                            <button class="border-2 border-black text-black px-6 py-2 rounded hover:bg-gray-100 transition">Monthly Seed</button>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-8 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-bold mb-6">Connect With Me</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <i class="fas fa-envelope text-black mr-4 text-xl"></i>
+                                <span>stefanlourensministries@gmail.com</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-phone text-black mr-4 text-xl"></i>
+                                <span>+27639263559</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-globe text-black mr-4 text-xl"></i>
+                                <span>www.stefanlourensministry.com</span>
+                            </div>
+                        </div>
+                        <div class="flex space-x-4 mt-6">
+                            <a href="#" class="text-black hover:text-gray-600"><i class="fab fa-facebook-f text-2xl"></i></a>
+                            <a href="#" class="text-black hover:text-gray-600"><i class="fab fa-twitter text-2xl"></i></a>
+                            <a href="#" class="text-black hover:text-gray-600"><i class="fab fa-instagram text-2xl"></i></a>
+                            <a href="#" class="text-black hover:text-gray-600"><i class="fab fa-youtube text-2xl"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Stefan Lourens Ministry</h3>
+                    <p>Helping individuals grow in faith through biblical teaching, books, and mentorship.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="hover:text-gray-300">Home</a></li>
+                        <li><a href="#books" class="hover:text-gray-300">Books</a></li>
+                        <li><a href="#mentorship" class="hover:text-gray-300">Mentorship</a></li>
+                        <li><a href="#about" class="hover:text-gray-300">About</a></li>
+                        <li><a href="#contact" class="hover:text-gray-300">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#mentorship" class="hover:text-gray-300">1-on-1 Prayer Sessions</a></li>
+                        <li><a href="#mentorship" class="hover:text-gray-300">Personal Prophecy</a></li>
+                        <li><a href="#mentorship" class="hover:text-gray-300">Spiritual Counseling</a></li>
+                        <li><a href="#books" class="hover:text-gray-300">Books</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Newsletter</h4>
+                    <p class="mb-4">Subscribe for updates, devotionals, and ministry news.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your email" class="px-4 py-2 text-black rounded-l focus:outline-none w-full">
+                        <button type="submit" class="bg-white text-black px-4 py-2 rounded-r hover:bg-gray-200"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+                <p>&copy; 2025 Stefan Lourens Ministry. All rights reserved.</p>
+                <div class="flex justify-center space-x-4 mt-4">
+                    <a href="#" class="text-sm hover:text-gray-300">Privacy Policy</a>
+                    <a href="#" class="text-sm hover:text-gray-300">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Booking Modal (hidden by default) -->
+    <div id="bookingModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-lg p-8 max-w-md w-full mx-4">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold">Book Mentorship Session</h3>
+                <button onclick="closeBookingModal()" class="text-gray-500 hover:text-black">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form class="space-y-4">
+                <div>
+                    <label for="booking-name" class="block mb-1">Full Name</label>
+                    <input type="text" id="booking-name" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-black">
+                </div>
+                <div>
+                    <label for="booking-email" class="block mb-1">Email</label>
+                    <input type="email" id="booking-email" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-black">
+                </div>
+                <div>
+                    <label for="booking-phone" class="block mb-1">Phone</label>
+                    <input type="tel" id="booking-phone" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-black">
+                </div>
+                <div>
+                    <label for="booking-program" class="block mb-1">Program</label>
+                    <select id="booking-program" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-black">
+                        <option value="1-on-1">1-on-1 Mentorship</option>
+                        <option value="group">Group Mentorship</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="booking-date" class="block mb-1">Preferred Date</label>
+                    <input type="date" id="booking-date" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-black">
+                </div>
+                <div>
+                    <label for="booking-message" class="block mb-1">Special Requests</label>
+                    <textarea id="booking-message" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-black"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-black text-white px-6 py-3 rounded hover:bg-gray-800 transition">Complete Booking</button>
+                <div class="flex justify-center space-x-4 mt-4">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/2560px-Visa_Inc._logo.svg.png" class="payment-icon h-8" alt="Visa">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mastercard/mastercard-original.svg" class="payment-icon h-8" alt="Mastercard">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/paypal/paypal-original.svg" class="payment-icon h-8" alt="PayPal">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.querySelector('.mobile-menu-button');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                mobileMenu.classList.add('hidden');
+            });
+        });
+        
+        // Booking modal functions
+        function openBookingModal() {
+            document.getElementById('bookingModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeBookingModal() {
+            document.getElementById('bookingModal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Close modal when clicking outside
+        document.getElementById('bookingModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeBookingModal();
+            }
+        });
+
+        // Contact Form Submission
+        document.getElementById('contactForm')?.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const form = e.target;
+            const submitBtn = document.getElementById('submitBtn');
+            const successMessage = document.getElementById('successMessage');
+            
+            // Show loading state
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = `
+                <span class="inline-block animate-spin mr-2">↻</span>
+                Sending...
+            `;
+            
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: new FormData(form),
+                    headers: { 'Accept': 'application/json' }
+                });
+                
+                if (response.ok) {
+                    // Show success message
+                    form.reset();
+                    successMessage.classList.remove('hidden');
+                    setTimeout(() => {
+                        successMessage.classList.add('hidden');
+                    }, 5000);
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            } catch (error) {
+                alert('There was a problem sending your message. Please try again later.');
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = 'Send Message';
+            }
+        });
+    </script>
+</body>
+</html>
